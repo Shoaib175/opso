@@ -21,8 +21,10 @@ def main():
         ptag = soup.find_all('h3')
         for i in ptag:
             st.write(i.text)
-        for link in soup.findAll('a', attrs={'href': compile("^http://")}):
-            st.write (link.get('href'))
+        links=[]
+        for link in soup.findAll('h3'):
+            links.append('https:'+link.get('href'))
+        st.write(links)
 
 if __name__ == '__main__':
     main()
