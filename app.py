@@ -23,7 +23,7 @@ def main():
             st.write(i.text)
         links=[]
         for link in soup.findAll('a'):
-            links.append('https:'+link.get('href'))
+            links.append(link.get('href'))
         st.write(links)
 
 if __name__ == '__main__':
