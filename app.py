@@ -1,4 +1,6 @@
-from re import T
+from os import link
+from re import T, compile
+from bs4.builder import HTML
 from bs4.element import SoupStrainer
 import streamlit as st
 import streamlit.components.v1 as components
@@ -19,9 +21,8 @@ def main():
         ptag = soup.find_all('h3')
         for i in ptag:
             st.write(i.text)
-
-
-
+        for link in soup.findAll('a', attrs={'href': compile("^http://")}):
+            print (link.get('href'))
 
 if __name__ == '__main__':
     main()
