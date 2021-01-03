@@ -22,7 +22,7 @@ def main():
         for i in ptag:
             st.write(i.text)
         for link in soup.findAll('a', attrs={'href': compile("^http://")}):
-            print (link.get('href'))
+            st.write (link.get('href'))
 
 if __name__ == '__main__':
     main()
