@@ -1,4 +1,5 @@
 from re import T
+from bs4.element import SoupStrainer
 import streamlit as st
 import streamlit.components.v1 as components
 import time
@@ -15,7 +16,9 @@ def main():
         url = "https://www.google.com/search?q="+city
         req = requests.get(url)
         soup = BeautifulSoup(req.text, "html.parser")
-        st.write(soup.h3)   
+        page = soup.find_all('h3')
+        st.write(page)
+
 
 
 
