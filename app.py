@@ -12,7 +12,7 @@ def main():
     query = st.text_input("Enter your target keyword")
     button = st.button("Scrape")
     if(button==T):
-        query = city.replace(" ","+")
+        query = query.replace(" ","+")
         url = "https://www.google.com/search?q="+query
         req = requests.get(url)
         soup = BeautifulSoup(req.text, "html.parser")
