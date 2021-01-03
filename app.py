@@ -22,7 +22,7 @@ def main():
         for i in ptag:
             st.write(i.text)
         links=[]
-        for link in soup.findAll('h3'):
+        for link in soup.findAll('a'):
             links.append('https:'+link.get('href'))
         st.write(links)
 
