@@ -14,10 +14,12 @@ def main():
     if(button==T):
         city = city.replace(" ","+")
         url = "https://www.google.com/search?q="+city
+        url = "https://www.studytonight.com/python/web-scraping/find-tags-with-beautifulsoup"
         req = requests.get(url)
         soup = BeautifulSoup(req.text, "html.parser")
-        page = soup.find_all('h3')
-        st.write(page)
+        ptag = soup.find_all('h3')
+        for i in ptag:
+            st.write(i.text)
 
 
 
