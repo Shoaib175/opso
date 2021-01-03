@@ -16,7 +16,7 @@ def main():
         url = "https://www.google.com/search?q="+city
         req = requests.get(url)
         soup = BeautifulSoup(req.text, "html.parser")
-        page = soup.find('h3').getText()
+        page = soup.findAll('h3').getText()
         st.write(page)
 
 
