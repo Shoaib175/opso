@@ -11,11 +11,11 @@ def main():
     city = st.text_input("Enter your target keyword")
     button = st.button("Scrape")
     if(button==T):
-        url = "https://www.google.com/search?q=baby+shark"
+        city = city.replace(" ","+")
+        url = "https://www.google.com/search?q="+city
         req = requests.get(url)
         soup = BeautifulSoup(req.text, "html.parser")
-        st.write(req.text)
-        st.write(soup.title.text)   
+        st.write(soup.text)   
 
 
 
